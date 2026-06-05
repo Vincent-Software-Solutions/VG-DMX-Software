@@ -39,6 +39,7 @@
   "build": {
     "appId": "com.vg.dmxsoftware",
     "productName": "VG DMX Software",
+    "artifactName": "${name}-${version}.${ext}",
     "directories": { "output": "dist", "buildResources": "build" },
     "files": ["out/**/*", "package.json"],
     "asarUnpack": ["**/node_modules/serialport/**", "**/node_modules/@serialport/**"],
