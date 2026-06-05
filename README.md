@@ -3,6 +3,9 @@
 Eigene DMX-Lichtsteuerung (Daslight-Style) für den **DSD TECH USB→DMX**-Adapter.
 Electron + React + TypeScript, Dark Mode, komplett deutsch.
 
+**➡️ Download (Installer): [Releases](https://github.com/Vincent-Software-Solutions/VG-DMX-Software/releases/latest)** — Windows `.exe`, Linux `AppImage`/`.deb`.
+Die installierte App aktualisiert sich danach **automatisch** auf neue Releases.
+
 ## Installieren / Download
 
 Fertige Pakete liegen nach dem Build in `dist/`:
@@ -69,7 +72,17 @@ Das DMX-Signal wird in Software erzeugt: Break + 512 Kanäle @ 250 kBaud / 8N2, 
 
 Alle Events liegen in `userData/workspace.json` (automatisches Speichern).
 
+## Neue Version veröffentlichen (Auto-Update)
+
+1. Version in `package.json` erhöhen (z.B. `1.0.1`).
+2. Einmalig ein GitHub-Token mit `repo`-Rechten setzen: `export GH_TOKEN=...`
+3. `npm run release` — baut Linux+Windows-Installer und lädt sie samt `latest.yml`
+   automatisch als GitHub-Release hoch.
+
+Installierte Apps (Windows-Setup & AppImage) erkennen das neue Release beim Start
+und installieren es selbstständig.
+
 ## Roadmap
 
-Shows/Cue-Listen mit Go & Auto-Follow · OFL/GDTF-Import (verifizierte Marken-Daten) · MIDI-Mapping.
+Weitere verifizierte Fixtures (OFL/GDTF laufend) · macOS-Build · Timecode für Shows.
 Siehe `PLAN.md`.
